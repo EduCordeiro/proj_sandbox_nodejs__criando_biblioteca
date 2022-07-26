@@ -15,12 +15,12 @@ function extraiLinks(texto){
 }
 
 function trataErro(erro){
-    throw new Error(chalk.red(erro.code, 'Caminho ou arquivo não encontrado o arquivo.'));
+    throw new Error(erro.code + ' - Caminho ou arquivo não encontrado o arquivo.');
+    //throw new Error(erro);
 }
 
 async function pegaArquivo(caminhoDoArquivo){
     const encoding = 'utf-8';
-
     try{
       const texto = await fs.promises.readFile(caminhoDoArquivo, encoding);
       return extraiLinks(texto);

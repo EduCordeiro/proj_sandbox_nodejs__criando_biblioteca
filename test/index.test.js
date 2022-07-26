@@ -18,4 +18,7 @@ describe('Função pegaArquivo', () => {
         const resultado = await pegaArquivo('D:/Workspaces/NodeJs/proj_sandbox_nodejs__criando_biblioteca/test/arquivos/texto1_semlinks.md');
         expect(resultado).toBe('não há links');
     })
+    it('deve lançar um erro na falta de arquivo', async () => {
+        await expect(pegaArquivo('/home/juliana/Documents/alura/lib-markdown/test/arquivos')).rejects.toThrow(/ - Caminho ou arquivo não encontrado o arquivo./);
+      })
 });
