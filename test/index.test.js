@@ -14,4 +14,8 @@ describe('Função pegaArquivo', () => {
         const resultado = await pegaArquivo('D:/Workspaces/NodeJs/proj_sandbox_nodejs__criando_biblioteca/test/arquivos/texto1.md');
         expect(resultado).toEqual(arrayResult);
     })
+    it('deve retornar mensagem "não é links"', async () => {
+        const resultado = await pegaArquivo('D:/Workspaces/NodeJs/proj_sandbox_nodejs__criando_biblioteca/test/arquivos/texto1_semlinks.md');
+        expect(resultado).toBe('não há links');
+    })
 });
