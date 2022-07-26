@@ -8,7 +8,7 @@ async function processaTexto(caminhoDeArquivo){
     const resultado = await pegaArquivo(caminhoDeArquivo[2]);
 
     if(caminho[3] === 'validar'){
-        console.log('links validados', validaURLs(resultado));
+        console.log('links validados', await validaURLs(resultado));
     }else{
         console.log('Lista de linkls', resultado);
     }
